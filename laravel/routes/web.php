@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,36 +14,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Route::get('/', function () {
+  //  return view('welcome');
+//});
+Route::get('/', [EventController::class, 'list']);
+Route::get('/event/{id}', [EventController::class, 'show']);
+Route::post('/event/{id}', [ApplicationController::class, 'create']);
+Route::get('event/{id}/applications', [ApplicationController::class, 'list']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/event', function (){
-    return view('event');
-});
-
-Route::post('/event', function(){
-    $request = request();
-
-    $application = new \App\Models\Application();
-    $application->firstname = $request->get('firstname');
-    $application->lastname = $request->get('lastname');
-    $application->email = $request->get('email');
-    $application->answer = $request->get('answer');
-    $application->session_id = session()->getId();
-    $application->save();
-
-    return redirect('/event');
-});
-
-Route::get('event/applications', function(){
-    $applications = \App\Models\Application::where('answer', 'yes')->get();
-    $declinedApplications = \App\Models\Application::where('answer', 'no')->count();
-
-    return view('applications', [
-        'applications' => $applications,
-        'declinedApplications' => $declinedApplications
-
-    ]);
-
-});

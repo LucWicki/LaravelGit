@@ -15,7 +15,9 @@
      Datum: 1. März um 16:53 Uhr
     </p>
     <p>
-        <a href="/event/applications">Anmeldungen ansehen</a>
+        <a href="/event/{{$event-> id}}/applications">Anmeldungen ansehen</a>
+        <br/>
+        <a href="/event/{{$event-> id}}/">Zurück</a>
     </p>
 
     <h1> Anmeldung</h1>

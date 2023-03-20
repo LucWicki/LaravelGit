@@ -8,9 +8,26 @@
 </head>
 
 <body>
+<div>
+    <h1>{{$event-> eventname}}</h1>
+
+    <p>
+        {{$event->description}} <br/>
+        <br/>
+        Datum: {{$event-> date}}
+    </p>
+</div>
+
+<p><a href="/event/{{$event-> id}}/applications">Anmeldungen Ansehen</a>
+    <br/>
+    <a href="/">Zurück</a>
+</p>
+
+
+
 <form action="?" method="POST" class="form">
     @csrf
-    <title>Anmeldung für Event</title><br><br>
+
     <div>
         <p>Sind Sie dabei?:</p><br>
         <input type="radio" id="yes" name="answer" value="yes">
@@ -19,6 +36,8 @@
         <label for="no">Nein, ich möchte nicht</label><br>
     </div>
     <br><br>
+
+
 
     <label for="email">E-Mail:</label><br>
     <input type="email" id="email" name="email" required><br><br>
@@ -31,9 +50,9 @@
     <input type="submit" value="Abschicken">
 </form>
 
-<div>
-    <a href="/event/applications">Anmeldungen Ansehen</a>
-</div>
+
+
+
 </body>
 
 </html>
