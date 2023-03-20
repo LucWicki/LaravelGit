@@ -40,13 +40,26 @@
 
 
     <label for="email">E-Mail:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" value="{{old('email')}}" ><br><br>
+    @error('email')
+    <p style="color: #ef4444">{{$message}}</p>
+    @enderror
+
     <label for="firstname">Vorname:</label><br>
-    <input type="text" id="firstname" name="firstname" required><br><br>
+    <input type="text" id="firstname" name="firstname" value="{{old('firstname')}}" required><br><br>
+    @error('firstname')
+    <p style="color: #ef4444">{{$message}}</p>
+    @enderror
     <label for="lastname">Nachname:</label><br>
-    <input type="text" id="lastname" name="lastname" required><br><br>
-    <label for="bemerkungen">Bemerkungen:</label><br>
-    <textarea id="bemerkungen" name="bemerkungen" rows="4" cols="50"></textarea><br><br>
+    <input type="text" id="lastname" name="lastname" value="{{old('lastname')}}" required><br><br>
+    @error('lastname')
+    <p style="color: #ef4444">{{$message}}</p>
+    @enderror
+    <label for="description">Bemerkungen:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" value="{{old('description')}}"></textarea><br><br>
+    @error('notes')
+    <p style="color: #ef4444">{{$message}}</p>
+    @enderror
     <input type="submit" value="Abschicken">
 </form>
 
