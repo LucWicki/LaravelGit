@@ -10,14 +10,23 @@
 <header>
     <span>Mein Eventportal</span>
     <div>
-        <a href="/" >Alle Events </a>
-    @auth
-        <a href="/logout">Ausloggen</a>
-    @else
-        <a href="/login">Einloggen</a>
-        <a href="/register">Registrieren</a>
-    @endauth
-    @yield('content')
+        <a href="/">Alle Events </a>
+        </br>
+        <a href="/eventcreator">Event erstellen</a>
+        </br>
+        @auth
+            <a href="/logout">Ausloggen</a>
+            </br>
+
+
+        @else
+            <a href="/login">Einloggen</a>
+            </br>
+
+            <a href="/register">Registrieren</a>
+            </br>
+        @endauth
+        @yield('content')
     </div>
 </header>
 </body>

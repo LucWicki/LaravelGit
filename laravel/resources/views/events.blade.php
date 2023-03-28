@@ -4,7 +4,7 @@
         <h1>Alle Events</h1>
         <ul>
             @foreach($events as $event)
-                <li><a href="/event/{{$event->id}}">{{$event->eventname}}</a> {{$event->ap}}</li>
+                <li><a href="/event/{{$event->id}}">{{$event->eventname}}</a></li>
             @endforeach
         </ul>
     </div>

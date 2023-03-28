@@ -32,3 +32,5 @@ Route::post('/register', [UserController::class, 'create'])->middleware('guest')
 Route::post('/login', [UserController::class, 'login'])->middleware('guest');
 
 Route::get('/logout', [UserController::class, 'logout']);
+Route::get('/eventcreator', [EventController::class,'viewing']);
+Route::post('/eventcreator', [EventController::class, 'create']);
