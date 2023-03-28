@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-    <body>
     <div>
         <h1>{{$event-> eventname}}</h1>
 
@@ -54,5 +53,4 @@
             <p>{{session()->get('success')}}</p>
         </div>
     @endif
-    </body>
 @endsection

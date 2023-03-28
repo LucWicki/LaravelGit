@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-    <body>
     <div>
         <h1>Mein super Event!</h1>
         <p>Melde dich hier für den besten Event aller Zeiten an!
@@ -25,5 +24,4 @@
         </div>
 
     </div>
-    </body>
 @endsection
