@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+    <a href="/">Zurück</a>
+    </p>
+    </br>
     <form action="?" method="POST" class="form">
         @csrf
         <label for="eventname">Name des Events</label><br>
@@ -19,9 +22,14 @@
                   value="{{old('description')}}"></textarea><br><br>
         @error('description')
         <p style="color: #ef4444">{{$message}}</p>
-    @enderror
+        @enderror
         <input type="submit" value="Abschicken">
     </form>
+    @if (session()->has('success'))
+        <div>
+            <p>{{session()->get('success')}}</p>
+        </div>
+    @endif
 @endsection
 
-<!-- eventcontroller bearbeiten-->
+

@@ -46,6 +46,9 @@
         <label for="description">Bemerkungen:</label><br>
         <textarea id="description" name="description" rows="4" cols="50"
                   value="{{old('description')}}"></textarea><br><br>
+        @error('description')
+        <p style="color: #ef4444">{{$message}}</p>
+        @enderror
         <input type="submit" value="Abschicken">
     </form>
     @if (session()->has('success'))
