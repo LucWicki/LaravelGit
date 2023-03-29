@@ -15,7 +15,7 @@ class ApplicationFactory extends Factory
             'answer' => $this->faker->randomElement(['yes', 'no']),
             'firstname' => $this->faker->firstName,
             'lastname' => $this->faker->lastName,
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->text,
             'email' => $this->faker->email,
             'session_id' => '',
             'event_id' => $this->faker->numberBetween(1, 50),
