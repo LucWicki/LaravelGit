@@ -13,7 +13,6 @@
         <a href="/">Alle Events </a>
         </br>
 
-
         @auth
             <a href="/logout">Ausloggen</a>
             </br>

@@ -22,6 +22,7 @@ class EventController extends Controller
             'events' => $events
         ]);
     }
+
     public function createevent()
     {
         request()->validate([
@@ -42,7 +43,8 @@ class EventController extends Controller
         return redirect('/eventcreator');
     }
 
-    public function viewing(){
+    public function showeventform()
+    {
         return view('eventcreator');
     }
 }

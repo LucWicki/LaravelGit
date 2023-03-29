@@ -12,13 +12,13 @@ class ApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            'answer'=>$this->faker->randomElement(['yes', 'no']),
-            'firstname'=>$this->faker->firstName,
-            'lastname'=>$this->faker->lastName,
-            'description'=>$this->faker->paragraph,
+            'answer' => $this->faker->randomElement(['yes', 'no']),
+            'firstname' => $this->faker->firstName,
+            'lastname' => $this->faker->lastName,
+            'description' => $this->faker->paragraph,
             'email' => $this->faker->email,
-            'session_id'=> '',
-            'event_id'=> $this->faker->numberBetween(1, 50),
+            'session_id' => '',
+            'event_id' => $this->faker->numberBetween(1, 50),
 
         ];
     }

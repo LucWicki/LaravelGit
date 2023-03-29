@@ -13,6 +13,7 @@ class Event extends Model
     public $table = 'events';
 
     public $guarded = [];
+
     public function applications()
     {
         return $this->hasMany(Application::class);

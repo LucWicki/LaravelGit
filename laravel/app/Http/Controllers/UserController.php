@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 
 class UserController extends Controller
@@ -24,16 +25,17 @@ class UserController extends Controller
     public function login()
     {
         $attributes = request()->validate([
-            'email'=> 'required|email',
-            'password'=> 'required'
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
-        if(auth()->attempt($attributes)){
+        if (auth()->attempt($attributes)) {
             return redirect('/')->with('success', 'Welcome Back!');
         }
-        return back()->withErrors(['email'=>'Your provided credentials could not be verified.']);
+        return back()->withErrors(['email' => 'Your provided credentials could not be verified.']);
     }
 
-    public function logout(){
+    public function logout()
+    {
         auth()->logout();
 
         return redirect('/');
