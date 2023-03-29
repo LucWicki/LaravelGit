@@ -12,13 +12,13 @@
     <div>
         <a href="/">Alle Events </a>
         </br>
-        <a href="/eventcreator">Event erstellen</a>
-        </br>
+
+
         @auth
             <a href="/logout">Ausloggen</a>
             </br>
-
-
+            <a href="/eventcreator">Event erstellen</a>
+            </br>
         @else
             <a href="/login">Einloggen</a>
             </br>
